@@ -42,3 +42,13 @@ Se plantea como objetivos generales desplegar la infraestructura del proyecto en
 - Aplicar testing automatizado con un enfoque end-to-end para verificar flujos funcionales a nivel de toda la aplicación, y reduciendo los tiempos de regresión para el equipo de testing manual, previo a la las salidas a producción.
 
 El mayor desafío se presenta en relación a gran variedad de herramientas existentes y la elección de las mismas y al correcto uso de estas.
+
+## Herramientas utilizadas
+A continuación se detallan las tecnologías y herramientas utlilizadas para elaborar la solución
+
+-**Git**: Se utilizará Git como tecnología de control y versionado de archivos
+-**GitHub**: El uso de GitHub implica el almacenamiento de los diferentes repositorios en la nube, facilitando un acceso directo a los mismos.
+-**GutHub Actions**: Se considera el uso de GitHub Actions para la implemantación de las estrategias de CI/CD, además de ya estar integrada con GitHub, lo cual facilita su uso.
+-**Sonar Cloud**: El uso de Sonar Cloud estára limitado al análisis de código estático contenido en los diferentes repositorios.
+-**Terraform**: Se plantea el uso de terraform para definir la infraestructura como código (IaC).
+-**Playwright**: Plawright será usado como herramienta de testing E2E (End to End), debido a su fácil despliegue e integración con GitHub Actions.
