@@ -5,13 +5,9 @@
 
 <!-- Esto es un espaciado usando una línea en blanco -->
 
-<div align="center" style="margin-bottom: 30px;">
-    <h1 style="border-bottom: none;">Facultad de Ingeniería</h1>
-    <h2 style="border-bottom: none;">Escuela de Tecnología</h2>
-    <h3 style="border-bottom: none;">Obligatorio DevOps</h2>
-
----
-
+<div align="center">
+   
+   # Obligatorio DevOps
 </div>
 
 
@@ -44,3 +40,5 @@ Se plantea como objetivos generales desplegar la infraestructura del proyecto en
 - Realizar análisis de código estático en pos de poseer un código limpio y mantenible, reduciendo los code smells y la repetición de código, y a su vez fomentando la detección temprana de bugs.
 - Utilizar la metodología GitOps. A través de ella pretendemos utilizar el versionado de Git como la única fuente confiable de código y realizar deploys de manera automatizada.
 - Aplicar testing automatizado con un enfoque end-to-end para verificar flujos funcionales a nivel de toda la aplicación, y reduciendo los tiempos de regresión para el equipo de testing manual, previo a la las salidas a producción.
+
+El mayor desafío se presenta en relación a gran variedad de herramientas existentes y la elección de las mismas y al correcto uso de estas.
