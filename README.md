@@ -108,12 +108,11 @@ También debemos destacar el código del microservicio de orders no pasó el qua
 <div align="center" >
     <img alt="ms-orders-sonar-scan-1" width="500" src="orders-1.jpg">
 </div>
-
-
+&nbsp
 <div align="center" >
     <img alt="ms-orders-sonar-scan-2" width="500" src="orders-2.jpg">
 </div>
-
+&nbsp
 <div align="center" >
     <img alt="ms-orders-sonar-scan-3" width="500" src="orders-3.jpg">
 </div>
