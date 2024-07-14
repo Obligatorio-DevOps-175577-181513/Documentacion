@@ -66,7 +66,7 @@ El proyecto constará de un repositorio para cada microservicio y para almacenar
 
 
 <div align="center" >
-    <img src="Gitflow.png">
+    <img src="gitflow-diagram.png">
 </div>
 
 Para manejar de forma eficaz el desarrollo y la implementación de actualizaciones, hemos adoptado la estregia de GitFlow, en la cual denifimos 3 ramas estables (Production, Staging, Develop) y ramas fix (Hotfix y Bugfix). Asimismo, implementaremos las features necesarias para el desarrollo de nuevas características, basadas en la rama Develop. De esta forma pretendemos proporcionar un marco robusto y estructurado para la gestión de versiones y ramas.
@@ -79,5 +79,5 @@ El Repositorio de DevOps es fundamental para nuestra gestión de infraestructura
 A su vez, el equpio de Atuomatización trabajará de una manera similar sobre su repositorio, integrando los diferentes casos de prueba en ramas efímeras que posteriormente se mezclarár con la rama principal
 
 <div align="center" >
-    <img src="Trunk based.png">
+    <img src="trunk-based-diagram.png">
 </div>
