@@ -104,7 +104,7 @@ A pesar de dicho resultado, varios repositorios reportaron Code Smells, que, aun
 
 Cabe destacar también que el análisis detectó 2 bugs, 1 en el microservicio de orders de categoria (**C**) y otro en el microservicio de payments de categoría (**D**). Si bien estos bugs no son críticos, si consideramos importante el foco en ellos ya que tienen potencial para provocar fallos en sus respectivos microservicios.
 
-También debemos destacar el código del microservicio de orders no pasó el quality gate establecido por SonarCloud, por lo que consideramos imperante revisar el código de manera urgente y trabjar sobre los problemas evidenciados por la herramienta para poder integrar un código limpio, ordenado y sin fallas a los diferentes ambientes.
+También debemos destacar el código del microservicio de orders no pasó el quality gate establecido por SonarCloud debido al bug mencionado anteriormente, por lo que consideramos imperante solucionar el bug, revisar el código de manera urgente y trabjar sobre los problemas evidenciados por la herramienta para poder integrar un código limpio, ordenado y sin fallas a los diferentes ambientes.
 
 ##### Bug del Microservicio de Orders
 
