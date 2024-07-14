@@ -81,3 +81,35 @@ A su vez, el equpio de Atuomatización trabajará de una manera similar sobre su
 <div align="center" >
     <img src="trunk-based-diagram.png">
 </div>
+
+
+## Etapas de CI/CD
+
+### Análisis de código estático
+
+A través de la herramienta SonarCloud, se realizó análisis de código estático sobre cada uno de los repositorios principales (Frontend, orders-service, shipping-service, products-service y payments-service). Este análisis es ejecutado cada vez que se realiza un pull request sobre cada una de las ramas principales (develop, staging y production), y cuando se integra el código a cada una de ellas.
+
+Dicho análisis es requerido para relizar los subsecuentes pasos dentro del proceso de integración y deploy de cada uno de los repositorios, por lo cual, si el análisis falla, el proceso se interrumpe.
+
+#### Resultados obtenidos
+
+Para la mayoría de los repositorios donde se corrió el análisis, las conclusiones fueron positivos, ya que en 4 de los 5 repositorios, el resultado obtenido fue de "**Passed**".
+
+A pesar de dicho resultado, varios repositorios reportaron Code Smells, que, aunque no provoquen la detención de una salida a producción, si sería recomendable mejorar el código para poder eliminarlos, generando así u código mejor estructurado y mantenible.
+
+Cabe destacar también que el análisis detectó 2 bugs, 1 en el microservicio de orders de categoria (**C**) y otro en el microservicio de payments de categoría (**D**). Si bien estos bugs no son críticos, si consideramos importante el foco en ellos ya que tienen potencial para provocar fallos en sus respectivos microservicios.
+
+También debemos destacar el código del microservicio de orders no pasó el quality gate establecido por SonarCloud, por lo que consideramos imperante revisar el código de manera urgente y trabjar sobre los problemas evidenciados por la herramienta para poder integrar un código limpio, ordenado y sin fallas a los diferentes ambientes.
+
+<div align="center" >
+    <img src="orders-1.jpg">
+</div>
+
+
+<div align="center" >
+    <img src="orders-2.jpg">
+</div>
+
+<div align="center" >
+    <img src="orders-3.jpg">
+</div>
