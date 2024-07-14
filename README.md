@@ -47,8 +47,22 @@ El mayor desafío se presenta en relación a gran variedad de herramientas exist
 A continuación se detallan las tecnologías y herramientas utlilizadas para elaborar la solución
 
 -**Git**: Se utilizará Git como tecnología de control y versionado de archivos
+
 -**GitHub**: El uso de GitHub implica el almacenamiento de los diferentes repositorios en la nube, facilitando un acceso directo a los mismos.
+
 -**GutHub Actions**: Se considera el uso de GitHub Actions para la implemantación de las estrategias de CI/CD, además de ya estar integrada con GitHub, lo cual facilita su uso.
+
 -**Sonar Cloud**: El uso de Sonar Cloud estára limitado al análisis de código estático contenido en los diferentes repositorios.
+
 -**Terraform**: Se plantea el uso de terraform para definir la infraestructura como código (IaC).
+
 -**Playwright**: Plawright será usado como herramienta de testing E2E (End to End), debido a su fácil despliegue e integración con GitHub Actions.
+
+## Repositorios y estrategias de ramas
+El proyecto constará de un repositorio para cada microservicio y para almacenar el código de FrontEnd, bajo una estrategia de GitFlow.
+
+<div align="center" >
+    <img src="Gitflow.png">
+</div>
+
+Para manejar de forma eficaz el desarrollo y la implementación de actualizaciones, hemos adoptado la estregia de GitFlow, en la cual denifimos 3 ramas estables (Production, Staging, Develop) y ramas fix (Hotfix y Bugfix). Asimismo, implementaremos las features necesarias para el desarrollo de nuevas características, basadas en la rama Develop. De esta forma pretendemos proporcionar un marco robusto y estructurado para la gestión de versiones y ramas.
