@@ -95,6 +95,10 @@ Dicho análisis es requerido para relizar los subsecuentes pasos dentro del proc
 
 Para la mayoría de los repositorios donde se corrió el análisis, las conclusiones fueron positivos, ya que en 4 de los 5 repositorios, el resultado obtenido fue de "**Passed**".
 
+<div align="center" >
+    <img alt="sonar-scan-1" width="500" src="sonar-scan-1.jpg">
+</div>
+
 A pesar de dicho resultado, varios repositorios reportaron Code Smells, que, aunque no provoquen la detención de una salida a producción, si sería recomendable mejorar el código para poder eliminarlos, generando así u código mejor estructurado y mantenible.
 
 Cabe destacar también que el análisis detectó 2 bugs, 1 en el microservicio de orders de categoria (**C**) y otro en el microservicio de payments de categoría (**D**). Si bien estos bugs no son críticos, si consideramos importante el foco en ellos ya que tienen potencial para provocar fallos en sus respectivos microservicios.
@@ -102,14 +106,14 @@ Cabe destacar también que el análisis detectó 2 bugs, 1 en el microservicio d
 También debemos destacar el código del microservicio de orders no pasó el quality gate establecido por SonarCloud, por lo que consideramos imperante revisar el código de manera urgente y trabjar sobre los problemas evidenciados por la herramienta para poder integrar un código limpio, ordenado y sin fallas a los diferentes ambientes.
 
 <div align="center" >
-    <img alt="ms-orders-sonar-scan-1" src="orders-1.jpg">
+    <img alt="ms-orders-sonar-scan-1" width="500" src="orders-1.jpg">
 </div>
 
 
 <div align="center" >
-    <img alt="ms-orders-sonar-scan-2" src="orders-2.jpg">
+    <img alt="ms-orders-sonar-scan-2" width="500" src="orders-2.jpg">
 </div>
 
 <div align="center" >
-    <img alt="ms-orders-sonar-scan-3" src="orders-3.jpg">
+    <img alt="ms-orders-sonar-scan-3" width="500" src="orders-3.jpg">
 </div>
