@@ -84,6 +84,7 @@ A su vez, el equpio de Atuomatización trabajará de una manera similar sobre su
 
 
 ## Etapas de CI/CD
+<!-- Insertar diagrama de CI/CD acá -->
 
 ### Análisis de código estático
 
