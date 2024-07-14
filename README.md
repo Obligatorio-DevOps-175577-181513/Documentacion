@@ -105,6 +105,8 @@ Cabe destacar también que el análisis detectó 2 bugs, 1 en el microservicio d
 
 También debemos destacar el código del microservicio de orders no pasó el quality gate establecido por SonarCloud, por lo que consideramos imperante revisar el código de manera urgente y trabjar sobre los problemas evidenciados por la herramienta para poder integrar un código limpio, ordenado y sin fallas a los diferentes ambientes.
 
+##### Bug del Microservicio de Orders
+
 <div align="center" >
     <img alt="ms-orders-sonar-scan-1" width="550" src="orders-1.jpg">
 </div>
@@ -115,4 +117,19 @@ También debemos destacar el código del microservicio de orders no pasó el qua
 &nbsp
 <div align="center" >
     <img alt="ms-orders-sonar-scan-3" width="550" src="orders-3.jpg">
+</div>
+
+
+##### Bug del Microservicio de Payments
+
+<div align="center" >
+    <img alt="ms-payments-sonar-scan-1" width="550" src="payments-1.jpg">
+</div>
+&nbsp
+<div align="center" >
+    <img alt="ms-payments-sonar-scan-2" width="550" src="payments-2.jpg">
+</div>
+&nbsp
+<div align="center" >
+    <img alt="ms-payments-sonar-scan-3" width="550" src="payments-3.jpg">
 </div>
