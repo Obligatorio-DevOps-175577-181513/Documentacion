@@ -3,8 +3,6 @@
     
 </div>
 
-<!-- Esto es un espaciado usando una línea en blanco -->
-
 <div align="center">
    
    # Obligatorio DevOps
