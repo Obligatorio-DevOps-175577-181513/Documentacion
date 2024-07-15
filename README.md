@@ -3,8 +3,6 @@
     
 </div>
 
-<!-- Esto es un espaciado usando una línea en blanco -->
-
 <div align="center">
    
    # Obligatorio DevOps
@@ -42,3 +40,96 @@ Se plantea como objetivos generales desplegar la infraestructura del proyecto en
 - Aplicar testing automatizado con un enfoque end-to-end para verificar flujos funcionales a nivel de toda la aplicación, y reduciendo los tiempos de regresión para el equipo de testing manual, previo a la las salidas a producción.
 
 El mayor desafío se presenta en relación a gran variedad de herramientas existentes y la elección de las mismas y al correcto uso de estas.
+
+## Herramientas utilizadas
+A continuación se detallan las tecnologías y herramientas utlilizadas para elaborar la solución
+
+-**Git**: Se utilizará Git como tecnología de control y versionado de archivos
+
+-**GitHub**: El uso de GitHub implica el almacenamiento de los diferentes repositorios en la nube, facilitando un acceso directo a los mismos.
+
+-**GutHub Actions**: Se considera el uso de GitHub Actions para la implemantación de las estrategias de CI/CD, además de ya estar integrada con GitHub, lo cual facilita su uso.
+
+-**Sonar Cloud**: El uso de Sonar Cloud estára limitado al análisis de código estático contenido en los diferentes repositorios.
+
+-**Terraform**: Se plantea el uso de terraform para definir la infraestructura como código (IaC).
+
+-**Playwright**: Plawright será usado como herramienta de testing E2E (End to End), debido a su fácil despliegue e integración con GitHub Actions.
+
+## Repositorios y estrategias de ramas
+El proyecto constará de un repositorio para cada microservicio y para almacenar el código de FrontEnd, bajo una estrategia de GitFlow. A su vez, para almacenar el plan de pruebas y los archivos necesarios para los despliegues y configuraciones de ambientes (los Archivos de DevOps), manejaremos una estrategia de Trunk Based.
+
+### Repositorios de Frontend y Microservicios.
+
+
+
+<div align="center" >
+    <img src="gitflow-diagram.png">
+</div>
+
+Para manejar de forma eficaz el desarrollo y la implementación de actualizaciones, hemos adoptado la estregia de GitFlow, en la cual denifimos 3 ramas estables (Production, Staging, Develop) y ramas fix (Hotfix y Bugfix). Asimismo, implementaremos las features necesarias para el desarrollo de nuevas características, basadas en la rama Develop. De esta forma pretendemos proporcionar un marco robusto y estructurado para la gestión de versiones y ramas.
+
+
+### Repositorio de DevOps y Testing
+
+El Repositorio de DevOps es fundamental para nuestra gestión de infraestructura como código (IaC). y para los procesos que configuran nuestro ciclo de despliegue continuo (CD). Este repositorio se gestiona utilizando la estrategia Trunk Based, en la cual disponemos de una única rama estable (Main/Master) que siempre contendrá la versión más actualizada del código, y ramas efímeras para las features, facilitando una integración y despliegue ágil y eficiente.
+
+A su vez, el equpio de Atuomatización trabajará de una manera similar sobre su repositorio, integrando los diferentes casos de prueba en ramas efímeras que posteriormente se mezclarár con la rama principal
+
+<div align="center" >
+    <img src="trunk-based-diagram.png">
+</div>
+
+
+## Etapas de CI/CD
+<!-- Insertar diagrama de CI/CD acá -->
+
+### Análisis de código estático
+
+A través de la herramienta SonarCloud, se realizó análisis de código estático sobre cada uno de los repositorios principales (Frontend, orders-service, shipping-service, products-service y payments-service). Este análisis es ejecutado cada vez que se realiza un pull request sobre cada una de las ramas principales (develop, staging y production), y cuando se integra el código a cada una de ellas.
+
+Dicho análisis es requerido para relizar los subsecuentes pasos dentro del proceso de integración y deploy de cada uno de los repositorios, por lo cual, si el análisis falla, el proceso se interrumpe.
+
+#### Resultados obtenidos
+
+Para la mayoría de los repositorios donde se corrió el análisis, las conclusiones fueron positivos, ya que en 4 de los 5 repositorios, el resultado obtenido fue de "**Passed**".
+
+<div align="center" >
+    <img alt="sonar-scan-1" width="550" src="sonar-scan-1.jpg">
+</div>
+
+A pesar de dicho resultado, varios repositorios reportaron Code Smells, que, aunque no provoquen la detención de una salida a producción, si sería recomendable mejorar el código para poder eliminarlos, generando así u código mejor estructurado y mantenible.
+
+Cabe destacar también que el análisis detectó 2 bugs, 1 en el microservicio de orders de categoria (**C**) y otro en el microservicio de payments de categoría (**D**).
+
+Debemos destacar que el código del microservicio de orders no pasó el quality gate establecido por SonarCloud debido al bug mencionado anteriormente, por lo que consideramos imperante solucionar el bug, revisar el código de manera urgente y trabjar sobre los problemas evidenciados por la herramienta para poder integrar un código limpio, ordenado y sin fallas a los diferentes ambientes.
+
+##### Bug del Microservicio de Orders
+
+<div align="center" >
+    <img alt="ms-orders-sonar-scan-1" width="550" src="orders-1.jpg">
+</div>
+&nbsp
+<div align="center" >
+    <img alt="ms-orders-sonar-scan-2" width="550" src="orders-2.jpg">
+</div>
+&nbsp
+<div align="center" >
+    <img alt="ms-orders-sonar-scan-3" width="550" src="orders-3.jpg">
+</div>
+
+A pesar de que el bug del microservicio de payments no es tan relevante en comparación con el bug detectado en el microservicio de Orders, si consideramos importante solucionarlo lo antes posible en pos de mantener el código lo más limpio posible y la aplicación libre de bugs.
+
+##### Bug del Microservicio de Payments
+
+<div align="center" >
+    <img alt="ms-payments-sonar-scan-1" width="550" src="payments-1.jpg">
+</div>
+&nbsp
+<div align="center" >
+    <img alt="ms-payments-sonar-scan-2" width="550" src="payments-2.jpg">
+</div>
+&nbsp
+<div align="center" >
+    <img alt="ms-payments-sonar-scan-3" width="550" src="payments-3.jpg">
+</div>
