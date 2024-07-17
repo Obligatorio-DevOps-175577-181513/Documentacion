@@ -151,3 +151,15 @@ A pesar de que el bug del microservicio de payments no es tan relevante en compa
 ## Pruebas automatizadas con Playwright
 La implementación de automation con Playwright sobre FE se realizó tomando en cuenta un ejemplo de proyecto pequeño, en el cual disponemos de testers manuales y automation, y un numero acotado de commits diarios. En base a esto suponemos una implementación mediante el uso de un pipeline que permite ejecutar las pruebas automatizadas tanto a demanda, como también mediante una ejecución diaria cercana a la medianoche. Esto se debe a que durante el día las pruebas manuales permite cubrir los posibles commits que se realicen en ese horario y los fixes de los bugs. Pero en caso de ocurrir commits que sean mergeados luego del trabajo de testing manual, esto podría generar issues en alguna funcionalidad y en este caso nos permitiría al otro día identificar facilmente cual es el error y cual es el commit que lo origina.
 Por ello se pensó en la implementación de este pipeline que agiliza la búsqueda de errores sobre los cambios generados que los QA manual no hayan verificado.
+
+<div align="center" >
+    <img alt="Automation-screenshot" width="550" src="Automation.jpg">
+</div>
+
+En la captura se aprecia que tan solo uno de los tests está fallando, debido a que fue escrito para fallar deliberadamente para así poder mostrar cuando uno de los tests falla en la ejecución de Playwright y cómo se ve en las Actions de Guthub.
+
+<div align="center" >
+    <img alt="Automation-schedule" width="550" src="Automation-schedule.jpg">
+</div>
+
+Y por último, aquí se aprecia la ejecución nocturna que corre diariamente la batería de tests automatizados.
