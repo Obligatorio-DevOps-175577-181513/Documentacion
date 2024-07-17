@@ -90,9 +90,13 @@ A su vez, el equpio de Atuomatización trabajará de una manera similar sobre su
 
 
 ## Etapas de CI/CD
-<!-- Insertar diagrama de CI/CD acá -->
+
+<div align="center" >
+    <img src="CI CD diagram.jpg">
+</div>
 
 ### Análisis de código estático
+
 
 A través de la herramienta SonarCloud, se realizó análisis de código estático sobre cada uno de los repositorios principales (Frontend, orders-service, shipping-service, products-service y payments-service). Este análisis es ejecutado cada vez que se realiza un pull request sobre cada una de las ramas principales (develop, staging y production), y cuando se integra el código a cada una de ellas.
 
