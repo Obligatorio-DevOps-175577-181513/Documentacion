@@ -52,7 +52,15 @@ A continuación se detallan las tecnologías y herramientas utlilizadas para ela
 
 -**Sonar Cloud**: El uso de Sonar Cloud estára limitado al análisis de código estático contenido en los diferentes repositorios.
 
--**Terraform**: Se plantea el uso de terraform para definir la infraestructura como código (IaC).
+-**Docker**: Se utiliza para las etapas de Build y Deploy, permitiendo la creación y gestión de imágenes de contenedores. Docker empaqueta aplicaciones y sus dependencias en contenedores y nos permite realizar el push correspondiente a los repositorios de ECR.
+
+-**Terraform**: Se plantea el uso de terraform para definir la infraestructura como código (IaC) mediante el uso de los servicios de Cloud de AWS.
+
+-**Amazon ECR**: (Elastic Container Registry): Para almacenar, gestionar y desplegar las imágenes Docker. Mediante ECR se facilita la integración con ECS y la implementación de contenedores en la nube.
+
+-**Amazon ECS**: (Elastic Container Service) con Fargate: Utilizado para orquestar y gestionar contenedores Docker de manera simple y sin la necesidad de gestionar los servidores.
+
+-**Amazon S3**: (Simple Storage Service): Los buckets de S3 permiten almacenar y disponibilizar la app de frontend. S3 brinda una solución de almacenamiento escalable y de alta disponibilidad.
 
 -**Playwright**: Plawright será usado como herramienta de testing E2E (End to End), debido a su fácil despliegue e integración con GitHub Actions.
 
@@ -133,3 +141,9 @@ A pesar de que el bug del microservicio de payments no es tan relevante en compa
 <div align="center" >
     <img alt="ms-payments-sonar-scan-3" width="550" src="payments-3.jpg">
 </div>
+
+
+
+## Pruebas automatizadas con Playwright
+La implementación de automation con Playwright sobre FE se realizó tomando en cuenta un ejemplo de proyecto pequeño, en el cual disponemos de testers manuales y automation, y un numero acotado de commits diarios. En base a esto suponemos una implementación mediante el uso de un pipeline que permite ejecutar las pruebas automatizadas tanto a demanda, como también mediante una ejecución diaria cercana a la medianoche. Esto se debe a que durante el día las pruebas manuales permite cubrir los posibles commits que se realicen en ese horario y los fixes de los bugs. Pero en caso de ocurrir commits que sean mergeados luego del trabajo de testing manual, esto podría generar issues en alguna funcionalidad y en este caso nos permitiría al otro día identificar facilmente cual es el error y cual es el commit que lo origina.
+Por ello se pensó en la implementación de este pipeline que agiliza la búsqueda de errores sobre los cambios generados que los QA manual no hayan verificado.
